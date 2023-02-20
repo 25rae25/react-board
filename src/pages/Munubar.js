@@ -1,6 +1,10 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 const Menubar = () => {
+    const navigate = useNavigate();
+    const goHome = () => {
+        navigate("/");
+    }
     return (
         <div>
             <ul>
@@ -11,7 +15,7 @@ const Menubar = () => {
                     <Link to = "/movies">Movies</Link>
                 </li>
             </ul>
-
+            <button onClick = {goHome} type = "button">홈으로</button>
             <Outlet/>
         </div>
     );
